@@ -27,6 +27,7 @@ Inside this loop, change the value of each property to 0
 
 function objectLooper(number) {
     for (let key in number) {
+        number[key] = 0;
         // Code here
     }
     return number;
@@ -51,10 +52,17 @@ If a value is greater than 3,000,000 set it to 0
 
 function stateLooper(obj) {
 	for (let key in obj) {
+        let obj = {}
+        if( obj[key > 3,000,000]) {
+            obj[key] = 0;
+         
+        
 		// Code here
-	}
-	return obj;
+    }
+}
+        return obj;
 };
+
 
 
 ////////// PROBLEM 3 //////////
@@ -66,6 +74,12 @@ Once all falsy values and their properties are removed, return the object
 */
 
 function cleanUser(obj) {
+    for (let key in obj) {
+        if (obj[key] == false) {
+            delete obj[key];
+        }
+    }
+    return obj;
     // Code here
 };
 
@@ -102,322 +116,331 @@ This is the process called destructuring
 ////////// PROBLEM 5 //////////
     
 // Do not edit the code below.
-var animalCount = {
-    cats: 2,
-    dogs: 5,
-    mice: 0,
-};
+// var animalCount = {
+//     cats: 2,
+//     dogs: 5,
+//     mice: 0,
+// };
 
-// Do not edit the code above.
+// // Do not edit the code above.
     
-/*
-Above you are given the object animalCount
-Destructure this object so that you have 3 distinct variables with values matching those of the properties from animalCount
-*/
+// /*
+// Above you are given the object animalCount
+// Destructure this object so that you have 3 distinct variables with values matching those of the properties from animalCount
+// */
 
-// Code here
-
-
-
-////////// PROBLEM 6 //////////
-
-/*
-Now that you have some experience with destructuring, we will take it one step further
-Instead of using a variable to assign values, we will use an object literal
-The commented code below is an example of this
-*/
-
-// const {one, two, three} = {one: '1', two: '2', three: '3'}
-
-/*
-For this problem, create an object literal to assign variables a value through destructuring
-These variables should be: students, mentors and instructors
-Set the value of students to be 24, mentors to be 3, and instructors to be 5
-*/
-
-// Code here
+// // Code here
 
 
 
-////////// PROBLEM 7 //////////
+// ////////// PROBLEM 6 //////////
 
-/*
-Create an object named languages with the properties 'french', 'english' and 'spanish'
-Give these properties the value true if you speak the language or false if you do not
-Use destructuring to assign the values of these properties to new variables
-*/
+// /*
+// Now that you have some experience with destructuring, we will take it one step further
+// Instead of using a variable to assign values, we will use an object literal
+// The commented code below is an example of this
+// */
 
-// Code here
+// // const {one, two, three} = {one: '1', two: '2', three: '3'}
 
+// /*
+// For this problem, create an object literal to assign variables a value through destructuring
+// These variables should be: students, mentors and instructors
+// Set the value of students to be 24, mentors to be 3, and instructors to be 5
+// */
 
-
-////////// PROBLEM 8 //////////
-
-/*
-We will now be implementing object destructuring using functions
-See the below commented code for an example
-
-Here we have an object called nums and a function called addition
-In this function, we are using object destructuring to unpack the objects values and assign them to new variables
-We then will add these values together and return the result
-If we were to invoke the addition function and pass in the nums object, the returned value would be 6
-*/
-
-// const nums = {
-//   one: 1,
-//   two: 2,
-//   three: 3
-// }
-
-// const addition = (obj) => {
-//   const {one, two, three} = obj;
-//   const total = one + two + three;
-//   return total
-// }
-
-/*
-For this problem, write a function called subtraction with an object parameter
-The object passed in this function will have the property names num1 and num2
-In the function, use object destructuring to assign the values of these properties to new variables
-Subtract num2 from num1 and return the result
-*/
-
-// Code here
+// // Code here
 
 
 
-////////// PROBLEM 9 //////////
+// ////////// PROBLEM 7 //////////
 
-/*
-Create a function called zooAnimals that will take an object parameter
-The object passed to this function will have the property names lion, tiger, and bear
-The values of these properties will be a number representing the count of that animal in the zoo
-Using object destructuring, return the total sum of the counts of these animals
-*/
+// /*
+// Create an object named languages with the properties 'french', 'english' and 'spanish'
+// Give these properties the value true if you speak the language or false if you do not
+// Use destructuring to assign the values of these properties to new variables
+// */
 
-// Code here
-
-
-
-////////// PROBLEM 10 //////////
-
-/*
-Now that you've practiced object destructuring inside of a function with that function's parameter, we will take it one step further
-Instead of using object destructuring inside of the function, we can declare a destructured object as our parameter
-See below for an example
-The function immediatelyDestructured has a parameter that is a destructured object
-This is useful because we can immediately use the variables one, two and three in the function instead of having to destructure the object parameter inside of the function
-If we were to invoke the function and pass in the exampleObj object below, the returned value would be 6
-*/
-
-// const exampleObj = {one: 1, two: 2, three: 3}
-
-// const immediatelyDestructured = ({one, two, three}) => {
-//   return one + two + three
-// }
-
-/*
-For this problem, write a function called greeting
-Instead of giving it an object parameter, give it a destructured object as it's parameter
-The properties of this object will be name and title
-Return from this function a greeting sentence that should say "Hello, <title> <name>!"
-Title and name in this sentence should be replaced with the values of the destructured object variables 
-*/
-
-// Code here
+// // Code here
 
 
 
-////////// PROBLEM 11 //////////
+// ////////// PROBLEM 8 //////////
 
-/*
-Create a function called truthyFalsy that takes a destructured object as it's parameter
-The properties of this object will be number and string
-One of these properties will be truthy and the other will be falsy
-Return the value that is truthy
-*/
+// /*
+// We will now be implementing object destructuring using functions
+// See the below commented code for an example
 
-// Code here
+// Here we have an object called nums and a function called addition
+// In this function, we are using object destructuring to unpack the objects values and assign them to new variables
+// We then will add these values together and return the result
+// If we were to invoke the addition function and pass in the nums object, the returned value would be 6
+// */
 
+// // const nums = {
+// //   one: 1,
+// //   two: 2,
+// //   three: 3
+// // }
 
+// // const addition = (obj) => {
+// //   const {one, two, three} = obj;
+// //   const total = one + two + three;
+// //   return total
+// // }
 
-////////// PROBLEM 12 //////////
+// /*
+// For this problem, write a function called subtraction with an object parameter
+// The object passed in this function will have the property names num1 and num2
+// In the function, use object destructuring to assign the values of these properties to new variables
+// Subtract num2 from num1 and return the result
+// */
 
-/*
-Create a one line ES6 arrow function called isGreaterThanTwenty that will take in a single parameter
-The function should return true if the parameter is greater than 20 and should return false otherwise  
-
-You should not use the ES5 function declaration or function expression syntax in your final solution
-Your function should also be contained within a single line
-*/
-
-// Code here
-
-
-
-////////// PROBLEM 13 //////////
-
-/*
-Create a one line arrow function called seven that will return the number 7
-
-You should not use the ES5 function declaration or function expression syntax in your final solution
-Your function should also be contained within a single line
-*/
-
-// Code here
+// // Code here
 
 
 
-////////// PROBLEM 14 //////////
+// ////////// PROBLEM 9 //////////
 
-/*
-Re-write the commented out ES5 functions provided below as ES6 arrow functions
-Name your functions the same as the ES5 versions provided below
+// /*
+// Create a function called zooAnimals that will take an object parameter
+// The object passed to this function will have the property names lion, tiger, and bear
+// The values of these properties will be a number representing the count of that animal in the zoo
+// Using object destructuring, return the total sum of the counts of these animals
+// */
+
+// // Code here
+
+
+
+// ////////// PROBLEM 10 //////////
+
+// /*
+// Now that you've practiced object destructuring inside of a function with that function's parameter, we will take it one step further
+// Instead of using object destructuring inside of the function, we can declare a destructured object as our parameter
+// See below for an example
+// The function immediatelyDestructured has a parameter that is a destructured object
+// This is useful because we can immediately use the variables one, two and three in the function instead of having to destructure the object parameter inside of the function
+// If we were to invoke the function and pass in the exampleObj object below, the returned value would be 6
+// */
+
+// // const exampleObj = {one: 1, two: 2, three: 3}
+
+// // const immediatelyDestructured = ({one, two, three}) => {
+// //   return one + two + three
+// // }
+
+// /*
+// For this problem, write a function called greeting
+// Instead of giving it an object parameter, give it a destructured object as it's parameter
+// The properties of this object will be name and title
+// Return from this function a greeting sentence that should say "Hello, <title> <name>!"
+// Title and name in this sentence should be replaced with the values of the destructured object variables 
+// */
+
+// // Code here
+
+
+
+// ////////// PROBLEM 11 //////////
+
+// /*
+// Create a function called truthyFalsy that takes a destructured object as it's parameter
+// The properties of this object will be number and string
+// One of these properties will be truthy and the other will be falsy
+// Return the value that is truthy
+// */
+
+// // Code here
+
+
+
+// ////////// PROBLEM 12 //////////
+
+// /*
+// Create a one line ES6 arrow function called isGreaterThanTwenty that will take in a single parameter
+// The function should return true if the parameter is greater than 20 and should return false otherwise  
+
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// Your function should also be contained within a single line
+// */
+
+// // Code here
+// var isGreaterThanTwenty = num => num > 20;
+
+
+// ////////// PROBLEM 13 //////////
+
+// /*
+// Create a one line arrow function called seven that will return the number 7
+
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// Your function should also be contained within a single line
+// */
+
+// // Code here
+// () => 7;
+
+
+// ////////// PROBLEM 14 //////////
+
+// /*
+// Re-write the commented out ES5 functions provided below as ES6 arrow functions
+// Name your functions the same as the ES5 versions provided below
  
-You should not use the ES5 function declaration or function expression syntax in your final solution
-Your function should also be contained within a single line
-*/
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// Your function should also be contained within a single line
+// */
 
-/*
-function add(num1, num2) {
-    return num1 + num2;
-};
+// /*
+// function add(num1, num2) {
+//     return num1 + num2;
+// };
 
-function subtract(num1, num2) {
-    return num1 - num2;
-};
+// function subtract(num1, num2) {
+//     return num1 - num2;
+// };
 
-function double(num) {
-    return num * 2;
-};
-*/
+// function double(num) {
+//     return num * 2;
+// };
+// */
 
-// Code here
-
-
-
-////////// PROBLEM 15 //////////
-
-/*
-Create an ES6 arrow function called multiply that takes in two parameters: num1 and num2
-The function should return the product of the two parameters
-
-You should not use the ES5 function declaration or function expression syntax in your final solution
-*/
-
-// Code here
+// // Code here
+// var add = (num1, num2) => num1 + num2;
+// var subtract = (num1, num2) => num1 - num2;
+// var double = num => num * 2;
 
 
 
-////////// PROBLEM 16 //////////
+// ////////// PROBLEM 15 //////////
 
-/*
-Create an ES6 arrow function called concatenate that takes in two parameters: str1 and str2
-The function should return a single concatenated (joined) str of str1 and str2
+// /*
+// Create an ES6 arrow function called multiply that takes in two parameters: num1 and num2
+// The function should return the product of the two parameters
 
-You should not use the ES5 function declaration or function expression syntax in your final solution
-*/
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// */
 
-// Code here
-
-
-
-////////// PROBLEM 17 //////////
-
-/*
-Write an arrow function called gemInfo that takes in three parameters: gemType, gemSize, and gemWeight
-The function should return an object with the properties: gemType, gemSize, gemWeight
-The values of each property should correspond to its respective parameter
-
-You should not use the ES5 function declaration or function expression syntax in your final solution
-*/
-
-// Code here
+// // Code here
+// var multiply = (num1, num2) => num1 * num2;
 
 
+// ////////// PROBLEM 16 //////////
 
-////////// PROBLEM 18 //////////
+// /*
+// Create an ES6 arrow function called concatenate that takes in two parameters: str1 and str2
+// The function should return a single concatenated (joined) str of str1 and str2
 
-/*
-Create a function called identifier that uses the filter higher order array method to filter over the provided jobs array of objects
-The function should return the object of the person with a job as a programmer
-Make sure to use the arrow function in conjunction with the filter method
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// */
 
-Your returned value should be a single object, not an array with one object inside of it
-You should not use the ES5 function declaration or function expression syntax in your final solution
-You should not use a for loop, but should use the filter method instead
-*/
-
-// Do not edit the code below.
-let jobs = [
-	{ receptionist: "James" },
-	{ programmer: "Steve" },
-	{ designer: "Alicia" },
-];
-
-// Do not edit the code above.
+// // Code here
+// var concatenate = (str1, str2) => str1 + str2;
 
 
-// Code here
+// ////////// PROBLEM 17 //////////
+
+// /*
+// Write an arrow function called gemInfo that takes in three parameters: gemType, gemSize, and gemWeight
+// The function should return an object with the properties: gemType, gemSize, gemWeight
+// The values of each property should correspond to its respective parameter
+
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// */
+
+// // Code here
+// var gemInfo = (gemType, gemSize, gemWeight) => obj = {
+//     gemType: gemType,
+//     gemSize: gemSize,
+//     gemWeight: gemWeight
+// };
 
 
+// ////////// PROBLEM 18 //////////
 
-////////// PROBLEM 19 //////////
+// /*
+// Create a function called identifier that uses the filter higher order array method to filter over the provided jobs array of objects
+// The function should return the object of the person with a job as a programmer
+// Make sure to use the arrow function in conjunction with the filter method
 
-/*
-Create a function called evens that takes in an array as a parameter
-The function should use the filter method to filter over the array parameter and return a new array with only the even numbers included
-Make sure to use the arrow function construct combined with the higher order array filter method
+// Your returned value should be a single object, not an array with one object inside of it
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// You should not use a for loop, but should use the filter method instead
+// */
+
+// // Do not edit the code below.
+// let jobs = [
+// 	{ receptionist: "James" },
+// 	{ programmer: "Steve" },
+// 	{ designer: "Alicia" },
+// ];
+
+// // Do not edit the code above.
+
+
+// // Code here
+// jobs.filter((job) => job === 'programmer');
+
+
+// ////////// PROBLEM 19 //////////
+
+// /*
+// Create a function called evens that takes in an array as a parameter
+// The function should use the filter method to filter over the array parameter and return a new array with only the even numbers included
+// Make sure to use the arrow function construct combined with the higher order array filter method
   
-You should not use the ES5 function declaration or function expression syntax in your final solution
-You should not use a for loop, but should use the filter method instead
-*/
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// You should not use a for loop, but should use the filter method instead
+// */
 
-// Code here
+// // Code here
+// let evens = array.filter(val => {
+//     return val % 2 === 0;
+// });
 
 
+// ////////// PROBLEM 20 //////////
 
-////////// PROBLEM 20 //////////
-
-/*
-Create a function called startWithLetterA that takes in an array as a parameter
-The function should use the filter method to filter over the array of strings and return a new array with only the strings that start with the letter "A" or "a"
-The filter is not case-sensitive, so it should return words that begin with both "A" and "a"
-Make sure to use the arrow function construct combined with the higher order array filter method
+// /*
+// Create a function called startWithLetterA that takes in an array as a parameter
+// The function should use the filter method to filter over the array of strings and return a new array with only the strings that start with the letter "A" or "a"
+// The filter is not case-sensitive, so it should return words that begin with both "A" and "a"
+// Make sure to use the arrow function construct combined with the higher order array filter method
   
-You should not use the ES5 function declaration or function expression syntax in your final solution
-You should not use a for loop, but should use the filter method instead
+// You should not use the ES5 function declaration or function expression syntax in your final solution
+// You should not use a for loop, but should use the filter method instead
 
-*/
+// */
 
-// Code here
-
-
-
-////////// PROBLEM 21 //////////
-
-/*
-Edit the formalGreeting function and use the built in .map method to map over the names parameter
-and return a new array with "Hello, " appended to the beginning of each name
-Make sure to use arrow functions combined with the map method    
-
-*/
-
-const formalGreeting = names => {
-    // Code here
-}
+// // Code here
 
 
 
-////////// PROBLEM 22 //////////
+// ////////// PROBLEM 21 //////////
 
-/*
-Edit the productOfArray function and use the built in .reduce method to loop over the numbers parameter
-and return the product of all the numbers in the array
-Make sure to use arrow functions combined with the reduce method    
+// /*
+// Edit the formalGreeting function and use the built in .map method to map over the names parameter
+// and return a new array with "Hello, " appended to the beginning of each name
+// Make sure to use arrow functions combined with the map method    
 
-*/
+// */
 
-const productOfArray = numbers => {
-    // Code here
-}
+// const formalGreeting = names => {
+//     // Code here
+// }
+
+
+
+// ////////// PROBLEM 22 //////////
+
+// /*
+// Edit the productOfArray function and use the built in .reduce method to loop over the numbers parameter
+// and return the product of all the numbers in the array
+// Make sure to use arrow functions combined with the reduce method    
+
+// */
+
+// const productOfArray = numbers => {
+//     // Code here
+// }
